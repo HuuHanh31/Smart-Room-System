@@ -66,10 +66,10 @@ serial.onDataReceived(serial.delimiters(Delimiters.Hash), function () {
         pins.digitalWritePin(DigitalPin.P2, 1)
     }
     if (serial.readString() == "#2") {
-        pins.digitalWritePin(DigitalPin.P2, 1)
+        pins.digitalWritePin(DigitalPin.P9, 0)
     }
     if (serial.readString() == "#3") {
-        pins.digitalWritePin(DigitalPin.P2, 1)
+        pins.digitalWritePin(DigitalPin.P9, 1)
     }
     if (serial.readString() == "#4") {
         pins.analogWritePin(AnalogPin.P4, 0)
@@ -91,6 +91,7 @@ cnt_dark = 0
 cnt_light = 0
 cnt_sensor = 0
 cnt_lightss = 0
+pins.digitalWritePin(DigitalPin.P8, 0)
 led.enable(false)
 basic.forever(function () {
     Sensor()
